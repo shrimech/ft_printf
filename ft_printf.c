@@ -6,7 +6,7 @@
 /*   By: shrimech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:09:34 by shrimech          #+#    #+#             */
-/*   Updated: 2024/11/15 11:09:40 by shrimech         ###   ########.fr       */
+/*   Updated: 2024/11/15 11:36:33 by shrimech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,9 +141,9 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
+/*
 #include <stdio.h>
 int main()
 {
 	ft_printf("how many %s in the cluster : %d\nsalaaaaah", "salah", 1);
-}
+}*/
