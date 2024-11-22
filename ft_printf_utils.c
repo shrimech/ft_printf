@@ -6,7 +6,7 @@
 /*   By: shrimech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:09:34 by shrimech          #+#    #+#             */
-/*   Updated: 2024/11/15 11:36:33 by shrimech         ###   ########.fr       */
+/*   Updated: 2024/11/22 12:00:58 by shrimech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ int	ft_putchar(char c)
 
 int	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
+	if (!str)
+		return (ft_putstr("(null)"));
 	while (*str)
 	{
 		ft_putchar(*str);
@@ -34,8 +36,8 @@ int	ft_putstr(char *str)
 
 int	ft_putnbr(long n)
 {
-	int i;
-	long nb;
+	int		i;
+	long	nb;
 
 	i = 0;
 	if (n < 0)
@@ -53,5 +55,22 @@ int	ft_putnbr(long n)
 	if (n >= 10)
 		ft_putnbr(n / 10);
 	ft_putchar(n % 10 + '0');
+	return (i);
+}
+
+int	ft_putptr(void *ptr)
+{
+	int					i;
+	unsigned long		addr;
+
+	i = 0;
+	addr = (unsigned long)ptr;
+	if (addr == 0)
+		i += ft_putstr("(nil)");
+	else if (addr != 0)
+	{
+		i += ft_putstr("0x");
+		i += ft_putnbr_hex(addr);
+	}
 	return (i);
 }
