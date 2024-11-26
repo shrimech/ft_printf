@@ -53,8 +53,13 @@ int	ft_printf_data(char str, va_list ap)
 		count += ft_putnbr_hex_upper(va_arg(ap, unsigned int));
 	else if (str == 'p')
 		count += ft_putptr(va_arg(ap, void *));
-	if (str == '%')
+	else if (str == '%')
 		count += ft_putchar(str);
+	else
+	{
+		count += ft_putchar('%');
+		count += ft_putchar(str);
+	}
 	return (count);
 }
 
@@ -79,6 +84,8 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	count = 0;
 	va_start(ap, format);
+	if (!format)
+		return (-1);
 	if (check_last(format) == 1)
 		return (-1);
 	while (format[i])
@@ -95,22 +102,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char *a = "abc";
-//	int c = ft_printf("%%\n", NULL);
-	int b = printf("%x\n" , NULL);
-//	printf("%d\n%d\n", c, b);
-// }*/
-// #include "ft_printf.h"
-
-// int main()
-// {
-// 	char *c = "salah";
-// 	int a = ft_printf("%p--%s--%d--%i--%c--%u--%x--%X--%%--\n",c,c,c,c,c,c,c,c,c);
-// 	int b = ft_printf("%p--%s--%d--%i--%c--%u--%x--%X--%%--\n",c,c,c,c,c,c,c,c,c);
-// 	ft_printf("%d    %d\n",a, b);
-// =	// printf("%d\n",b);
-// }
