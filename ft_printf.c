@@ -6,13 +6,13 @@
 /*   By: shrimech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:09:34 by shrimech          #+#    #+#             */
-/*   Updated: 2024/11/22 12:05:34 by shrimech         ###   ########.fr       */
+/*   Updated: 2024/11/26 18:47:11 by shrimech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_hex(unsigned int n)
+int	ft_putnbr_hex(unsigned long n)
 {
 	int	i;
 
