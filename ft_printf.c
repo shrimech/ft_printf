@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr_hex(unsigned long n)
+int	ft_putnbr_hex(unsigned int n)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int	ft_putnbr_hex(unsigned long n)
 	return (i);
 }
 
-int	ft_putnbr_hex_upper(unsigned long n)
+int	ft_putnbr_hex_upper(unsigned int n)
 {
 	int	i;
 

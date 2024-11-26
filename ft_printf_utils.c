@@ -58,6 +58,17 @@ int	ft_putnbr(long n)
 	return (i);
 }
 
+int	ft_puthex(unsigned long n)
+{
+	int	i;
+
+	i = 0;
+	if (n >= 16)
+		i += ft_putnbr_hex(n / 16);
+	i += ft_putchar("0123456789abcdef"[n % 16]);
+	return (i);
+}
+
 int	ft_putptr(void *ptr)
 {
 	int					i;
@@ -70,7 +81,7 @@ int	ft_putptr(void *ptr)
 	else if (addr != 0)
 	{
 		i += ft_putstr("0x");
-		i += ft_putnbr_hex(addr);
+		i += ft_puthex(addr);
 	}
 	return (i);
 }
