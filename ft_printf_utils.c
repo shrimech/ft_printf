@@ -37,7 +37,6 @@ int	ft_putstr(char *str)
 int	ft_putnbr(long n)
 {
 	int		i;
-	long	nb;
 
 	i = 0;
 	if (n < 0)
@@ -46,15 +45,9 @@ int	ft_putnbr(long n)
 		n = -n;
 		i++;
 	}
-	nb = n;
-	while (nb)
-	{
-		nb /= 10;
-		i++;
-	}
 	if (n >= 10)
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 + '0');
+		i += ft_putnbr(n / 10);
+	i += ft_putchar(n % 10 + '0');
 	return (i);
 }
 
