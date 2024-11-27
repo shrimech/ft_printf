@@ -25,5 +25,6 @@ int	ft_putchar(char c);
 int	ft_putnbr(long n);
 int	check_last(const char *str);
 int	ft_printf_data(char str, va_list ap);
+int	ft_puthex(unsigned long n);
 
 #endif
